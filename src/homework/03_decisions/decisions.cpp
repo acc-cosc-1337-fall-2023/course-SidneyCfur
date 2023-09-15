@@ -5,7 +5,7 @@
 using std::cout; using std::cin; using std::string;
 //Write code for function(s) code here
 
-string get_letter_grade_using_if(int grade)
+std::string get_letter_grade_using_if(int grade)
 {
     string result;
 
@@ -28,7 +28,7 @@ string get_letter_grade_using_if(int grade)
 
 }
 
-string get_letter_grade_using_switch(int grade)
+std::string get_letter_grade_using_switch(int grade)
 {
     string result;
 
