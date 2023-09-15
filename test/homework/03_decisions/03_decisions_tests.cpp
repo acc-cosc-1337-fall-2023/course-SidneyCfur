@@ -7,7 +7,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 }
 
 TEST_CASE("Verify switch case") {
-	REQUIRE(get_letter_grade_using_switch(50) == "F");
-	REQUIRE(get_letter_grade_using_switch(51) == "D");
-	REQUIRE(get_letter_grade_using_switch(66) == "C");
+	REQUIRE(get_letter_grade_using_if(50) == "F");
+	REQUIRE(get_letter_grade_using_if(51) == "D");
+	REQUIRE(get_letter_grade_using_if(66) == "C");
 }
