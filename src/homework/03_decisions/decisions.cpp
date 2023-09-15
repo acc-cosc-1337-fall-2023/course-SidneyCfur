@@ -9,16 +9,16 @@ std::string get_letter_grade_using_if(int grade)
 {
     string result;
 
-    if(grade < 51){
+    if(grade < 60){
         result = "F";
     }
-    else if(grade < 66){
+    else if(grade < 70){
         result = "D";
     }
-    else if(grade < 76){
+    else if(grade < 80){
         result = "C";
     }
-    else if(grade < 86){
+    else if(grade < 90){
         result = "B";
     }
     else {
@@ -33,23 +33,23 @@ std::string get_letter_grade_using_switch(int grade)
     string result;
 
     switch(grade){
-    case 1 ... 50:
+    case 0 ... 59:
     result = "F";
     break;
 
-    case 51 ... 65:
+    case 60 ... 69:
     result = "D";
     break;
 
-    case 66 ... 75:
+    case 70 ... 79:
     result = "C";
     break;
 
-    case 76 ... 85:
+    case 80 ... 89:
     result = "B";
     break;
 
-    case 86 ... 100:
+    case 90 ... 100:
     result = "A";
     break;
     }
@@ -57,3 +57,33 @@ std::string get_letter_grade_using_switch(int grade)
     return result;
 
 }
+
+int get_num_grade(){
+    int grade = 0;
+    cout<<"Enter a number between 0 and 100: \n\n";
+    cin>>grade;
+    if(grade < 0||grade > 100){
+        cout<<"Number out of range";
+        return(0);
+    }
+    return grade;
+}
+
+void menu_select(int num){
+
+	switch (num)
+	{
+	case 1:
+		cout<< get_letter_grade_using_if(get_num_grade())<<"\n";
+		break;
+	case 2:
+        cout<< get_letter_grade_using_switch(get_num_grade())<<"\n";
+		break;
+	case 3:
+        cout<<"Exit";
+		break;
+	default:
+		break;
+	}
+}
+
