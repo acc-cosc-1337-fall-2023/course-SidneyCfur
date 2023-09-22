@@ -6,31 +6,31 @@ using std::cout; using std::cin;
 
 int main() 
 {
-	auto choice1 = 0;
-	auto choice2 = 0;
+	
 	auto exit = 'n';
 	do
 	{
-		cout<<"1- Factorial \n 2- Greatest Common Divisor \n 3- Exit";
+		cout<<"Enter a number to select and option- \n\n 1- Factorial \n 2- Greatest Common Divisor \n 3- Exit \n";
+		auto choice1 = 0;
+		auto choice2 = 0;
 		cin>>choice1;
-		switch(choice1){
-		case 1:
+
+	if(choice1 == 1){
 		cout<<"Enter one number for factorial.\n";
 		cin>>choice1;
-		cout<<factorial(choice1);
-		break;
-		case 2:
-		cout<<"Enter two numbers to compare fore greatest common divisor.\n";
+		cout<<factorial(choice1)<<"\n\n";
+		}
+	else if(choice1 == 2){
+		cout<<"Enter two numbers to compare for the greatest common divisor.\n";
 		cin>>choice1;
 		cin>>choice2;
-		cout<<gcd(choice1,choice2);
-		break;
-		case 3:
+		cout<<gcd(choice1,choice2)<<"\n\n";
+		}
+	else if(choice1 == 3){
 		cout<<"Are you sure you want to exit? (y/n)\n";
 		cin>>exit;
-		break;
 		}
 	}
-	while(exit != 'n');
+	while(exit == 'n' || exit == 'N');
 	return 0;
 }
