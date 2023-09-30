@@ -34,16 +34,16 @@ string get_dna_complement(string dna){
     string output = get_reverse_string(dna);
 
     for(int i = 0; i <= output.length(); i++){
-        if(output[i] == 'A'){
+        if(output[i] == 'A'||output[i] == 'a'){
             output[i] = 'T';
         }
-        else if(output[i] == 'T'){
+        else if(output[i] == 'T'||output[i] == 't'){
             output[i] = 'A';
         }
-        else if(output[i] == 'G'){
+        else if(output[i] == 'G'||output[i] == 'g'){
             output[i] = 'C';
         }
-        else if(output[i] == 'C'){
+        else if(output[i] == 'C'||output[i] == 'c'){
             output[i] = 'G';
         }
     }
