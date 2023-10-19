@@ -28,9 +28,9 @@ TEST_CASE("Test if the board is full")
 	game.mark_board(9);
 	REQUIRE(game.game_over() == false);
 	game.mark_board(8);
-
 	REQUIRE(game.game_over() == true);
-}
+	REQUIRE(game.get_winner() == "C");
+	}
 
 TEST_CASE("Test the vertical victory 1"){
 	TicTacToe game;

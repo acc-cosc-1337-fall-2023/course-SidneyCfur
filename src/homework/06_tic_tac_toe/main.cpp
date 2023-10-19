@@ -10,10 +10,14 @@ int main()
 	TicTacToe game;
 	string first_player;
 	char user_choice = 'y';
+
 	do
 	{
-		cout<<"Enter first player: ";
+		
+		while(!(first_player == "X" || first_player == "O")){
+		cout<<"Enter first player(X or O): ";
 		cin>>first_player;
+		}
 		game.start_game(first_player);
 
 		int position;
@@ -25,7 +29,7 @@ int main()
 			game.mark_board(position);
 			game.display_board();
 		}
-
+		cout<<"Winner is: "<<game.get_winner()<<"\n";
 		cout<<"Play again? enter y or Y.";
 		cin>>user_choice;
 
