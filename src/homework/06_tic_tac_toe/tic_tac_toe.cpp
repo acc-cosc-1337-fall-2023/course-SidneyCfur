@@ -114,3 +114,11 @@ void TicTacToe::set_winner()
         winner = "X";
     }
 }
+
+ostream& operator<<(std::ostream& out, const TicTacToe& game){
+    for(long unsigned int i = 0; i < game.pegs.size(); i += 3)
+    {
+        out<<game.pegs[i]<<"|"<<game.pegs[i+1]<<"|"<<game.pegs[i+2]<<"\n";
+    }
+    return out;
+}

@@ -1,5 +1,5 @@
 #include "tic_tac_toe.h"
-
+#include "tic_tac_toe_manager.h"
 #include<iostream>
 #include<string>
 
@@ -10,7 +10,8 @@ int main()
 	TicTacToe game;
 	string first_player;
 	char user_choice = 'y';
-
+	TicTacToeManager manager;
+	int x_win = 0; int o_win = 0; int ties = 0;
 	do
 	{
 		
@@ -30,12 +31,14 @@ int main()
 			game.display_board();
 		}
 		cout<<"Winner is: "<<game.get_winner()<<"\n";
+		manager.save_game(game);
+		
 		cout<<"Play again? enter y or Y.";
 		cin>>user_choice;
 
 
 
 	} while(user_choice == 'y' || user_choice == 'Y');
-
+	cout << manager;
 	return 0;
 }

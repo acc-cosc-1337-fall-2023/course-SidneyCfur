@@ -4,9 +4,11 @@
 #include<vector>
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
+using namespace std;
 
 class TicTacToe
 {
+friend ostream& operator<<(std::ostream& out, const TicTacToe& game);
 public:
     bool game_over();
     void start_game(std::string first_player);
@@ -14,6 +16,7 @@ public:
     std::string get_player() const{return player;}
     std::string get_winner() const{return winner;}
     void display_board() const;
+    
 private:
 		
     bool check_diagonal_win();
