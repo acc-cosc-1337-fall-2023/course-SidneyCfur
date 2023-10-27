@@ -27,13 +27,18 @@ int main()
 		{
 			cout<<"Enter a position: ";
 			cin>>position;
+
 			game.mark_board(position);
 			game.display_board();
 		}
 		cout<<"Winner is: "<<game.get_winner()<<"\n";
+
 		manager.save_game(game);
-		
-		cout<<"Play again? enter y or Y.";
+		manager.get_winner_total(o_win, x_win, ties);
+
+		cout<<"O wins: "<<o_win<<"\n"<<"X wins: "<<x_win<<"\n"<<"TIES: "<<ties<<"\n";
+		cout<<"enter Y or y to play again.\n\n";
+
 		cin>>user_choice;
 
 
