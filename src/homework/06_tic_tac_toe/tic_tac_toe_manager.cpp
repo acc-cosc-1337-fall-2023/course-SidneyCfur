@@ -5,11 +5,11 @@ using namespace std;
 
 void TicTacToeManager::save_game(unique_ptr<TicTacToe>& b)
 {
-    cout<<"Teaparty";
     update_winner_count(b -> get_winner());
     games.push_back(std::move(b));
     
 }
+
 
 void TicTacToeManager::get_winner_total(int& o, int& x, int& t)
 {

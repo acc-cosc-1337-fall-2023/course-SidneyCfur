@@ -10,11 +10,13 @@ using std::cout; using std::cin; using std::string; using std::unique_ptr; using
 int main() 
 {
 	unique_ptr<TicTacToe> game = nullptr;
-	string first_player;
+	string first_player = "";
 	char user_choice = 'y';
 	TicTacToeManager manager;
 	int x_win = 0; int o_win = 0; int ties = 0;
+
 	cout<<"which board you wish to play with \n(1) 3x3 \n (2) 4x4?\n\n";
+
 	string option;
 	cin>> option;
 	if(option == "2")
@@ -26,6 +28,7 @@ int main()
 		game = make_unique<TicTacToe3>();
 	}
 
+
 	do
 	{
 		
@@ -36,7 +39,7 @@ int main()
 		game->start_game(first_player);
 
 		int position;
-
+		
 		while(!game->game_over())
 		{
 			cout<<"Enter a position: ";
@@ -45,11 +48,9 @@ int main()
 			game->mark_board(position);
 			cout<<*game;
 		}
-		cout<<"Dog";
-		manager.save_game(game);
 		cout<<"Winner is: "<<game->get_winner()<<"\n";
 
-
+		manager.save_game(game);
 		manager.get_winner_total(o_win, x_win, ties);
 
 		cout<<"O wins: "<<o_win<<"\n"<<"X wins: "<<x_win<<"\n"<<"TIES: "<<ties<<"\n";
@@ -58,7 +59,14 @@ int main()
 		cin>>user_choice;
 
 
-
+			if(option == "2")
+		{
+			game = make_unique<TicTacToe4>();
+		}
+		else
+		{
+			game = make_unique<TicTacToe3>();
+		}
 	} while(user_choice == 'y' || user_choice == 'Y');
 	cout << manager;
 	return 0;

@@ -11,7 +11,9 @@ bool TicTacToe::game_over()
     {
         set_winner();
         return true;
+        
     }
+    
     winner = "C";
     return check_board_full();
 }
@@ -87,7 +89,6 @@ bool TicTacToe::check_diagonal_win()
 
 void TicTacToe::set_winner()
 {
-    cout<<"Hi";
     if(player == "X")
     {
         winner = "O";
